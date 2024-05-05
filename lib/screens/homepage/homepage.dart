@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_chat_app/provider/auth_provider.dart';
-import 'package:firebase_chat_app/services/auth/auth_service.dart';
+import 'package:firebase_chat_app/services/auth_service.dart';
 import 'package:firebase_chat_app/theme/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -32,7 +32,12 @@ class HomePage extends ConsumerWidget {
         ],
       ),
       body: Center(
-        child: Text(FirebaseAuth.instance.currentUser!.email!),
+        child: Text(
+          FirebaseAuth.instance.currentUser!.email!,
+          style: TextStyle(
+            color: Theme.of(context).colorScheme.inversePrimary,
+          ),
+        ),
       ),
     );
   }

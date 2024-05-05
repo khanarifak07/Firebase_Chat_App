@@ -76,6 +76,9 @@ class AuthService {
         case 'operation-not-allowed':
           errorMessage = 'Email/password accounts are not enabled.';
           break;
+        case 'ERROR_INVALID_EMAIL':
+          errorMessage = 'Invalid Email';
+          break;
         // Handle other Firebase authentication errors as needed
         default:
           errorMessage = 'Error: ${e.message}';

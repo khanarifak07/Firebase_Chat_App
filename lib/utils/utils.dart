@@ -7,6 +7,16 @@ Future<void> setupFirebase() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 }
 
+//navigate to next screen
 void navigateToScreen(BuildContext context, Widget screen) {
   Navigator.push(context, MaterialPageRoute(builder: (context) => screen));
+}
+
+//snackbar
+void showSnackBar(BuildContext context, String text, Color color) {
+  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+    content: Text(text),
+    backgroundColor: color,
+    duration: const Duration(milliseconds: 500),
+  ));
 }
